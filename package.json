@@ -13,7 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/btkostner/nuxt-dynamic-images.git"
+    "url": "git+https://github.com/btkostner/nuxt-dynamic-images.git"
+  },
+  "bugs": {
+    "url": "https://github.com/system76/design/issues"
   },
   "license": "MIT",
   "contributors": [
@@ -32,7 +35,8 @@
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "siroc build",
@@ -51,6 +55,7 @@
     "babel-eslint": "latest",
     "eslint": "latest",
     "nuxt": "latest",
+    "semantic-release": "^17.3.2",
     "siroc": "latest"
   },
   "peerDependencies": {
