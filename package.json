@@ -1,6 +1,6 @@
 {
   "name": "nuxt-dynamic-images",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Dynamiclly create social media preview images with Nuxt",
   "keywords": [
     "nuxt",
@@ -11,7 +11,10 @@
     "images",
     "plugins"
   ],
-  "repository": "btkostner/nuxt-dynamic-images",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btkostner/nuxt-dynamic-images.git"
+  },
   "license": "MIT",
   "contributors": [
     {
@@ -41,7 +44,6 @@
   },
   "devDependencies": {
     "@babel/core": "latest",
-    "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxt/types": "latest",
     "@nuxt/typescript-runtime": "latest",
@@ -49,8 +51,7 @@
     "babel-eslint": "latest",
     "eslint": "latest",
     "nuxt": "latest",
-    "siroc": "latest",
-    "standard-version": "latest"
+    "siroc": "latest"
   },
   "peerDependencies": {
     "@nuxt/content": "^1.11.1",

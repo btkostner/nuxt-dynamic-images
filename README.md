@@ -3,6 +3,7 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
+[![semantic-release][semantic-release-src]][semantic-release-href]
 [![License][license-src]][license-href]
 
 ## Features
@@ -163,6 +164,9 @@ Maintained by [Blake Kostner](https://github.com/btkostner)
 
 [github-actions-ci-src]: https://github.com/btkostner/nuxt-dynamic-images/workflows/CI/badge.svg
 [github-actions-ci-href]: https://github.com/btkostner/nuxt-dynamic-images/actions?query=workflow%3ACI
+
+[semantic-release-src]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-href]: https://github.com/semantic-release/semantic-release
 
 [license-src]: https://img.shields.io/npm/l/nuxt-dynamic-images.svg
 [license-href]: https://npmjs.com/package/nuxt-dynamic-images
