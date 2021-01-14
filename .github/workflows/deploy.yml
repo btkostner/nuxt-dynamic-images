@@ -28,9 +28,6 @@ jobs:
       - name: Build (module)
         run: npm run build
 
-      - name: Lint (git)
-        run: npx commitlint --from HEAD^6
-
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

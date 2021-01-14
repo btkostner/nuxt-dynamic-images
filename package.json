@@ -1,6 +1,6 @@
 {
   "name": "nuxt-dynamic-images",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Dynamiclly create social media preview images with Nuxt",
   "keywords": [
     "nuxt",
@@ -53,6 +53,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "babel-eslint": "^10.1.0",
+    "commitlint": "^11.0.0",
     "eslint": "^7.17.0",
     "nuxt": "^2.14.12",
     "semantic-release": "^17.3.2",
