@@ -35,6 +35,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Build (module)
+        run: npm run build
+
       - name: Build (example)
         working-directory: ./example
         run: |
