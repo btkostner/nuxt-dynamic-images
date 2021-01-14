@@ -28,7 +28,7 @@ npm install nuxt-dynamic-images
 2. Add `nuxt-dynamic-images` to the `buildModules` section of
 `nuxt.config.js`
 
-```js[nuxt.config.js]
+```js
 {
   buildModules: [
     // Simple usage
@@ -42,7 +42,7 @@ npm install nuxt-dynamic-images
 
 Or a separate section `dynamicImages` for module options:
 
-```js[nuxt.config.js]
+```js
 {
   buildModules: [
     // Simple usage
@@ -79,7 +79,7 @@ run down with the default configuration:
 
 1) Create some `@nuxt/content` files with image fields:
 
-```yaml[post.md]
+```yaml
 ---
 
 title: Example Blog Post!
@@ -95,7 +95,7 @@ images!
 
 2) Create a page at `/_public/social`:
 
-```vue[social.vue]
+```vue
 <template>
   <div :class="${field}" id="image">
     <h1>{{ post.title }}</h1>
