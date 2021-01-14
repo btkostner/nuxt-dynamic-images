@@ -1,0 +1,62 @@
+{
+  "name": "nuxt-dynamic-images",
+  "version": "0.0.1",
+  "description": "Dynamiclly create social media preview images with Nuxt",
+  "keywords": [
+    "nuxt",
+    "module",
+    "social",
+    "twitter",
+    "facebook",
+    "images",
+    "plugins"
+  ],
+  "repository": "btkostner/nuxt-dynamic-images",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Blake Kostner <git@btkostner.io>"
+    }
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.es.js"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "siroc build",
+    "lint": "eslint --fix --ext .js,.ts,.vue ."
+  },
+  "dependencies": {
+    "defu": "^2.0.4",
+    "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxt/types": "latest",
+    "@nuxt/typescript-runtime": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "babel-eslint": "latest",
+    "eslint": "latest",
+    "nuxt": "latest",
+    "siroc": "latest",
+    "standard-version": "latest"
+  },
+  "peerDependencies": {
+    "@nuxt/content": "^1.11.1",
+    "consola": "^2.15.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

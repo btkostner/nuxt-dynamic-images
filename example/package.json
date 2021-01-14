@@ -1,0 +1,17 @@
+{
+  "name": "nuxt-dynamic-images-example",
+  "description": "Example of nuxt-dynamic-images module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nuxt start",
+    "build": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.11.1",
+    "nuxt": "^2.14.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^3.1.0"
+  }
+}
