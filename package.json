@@ -1,6 +1,6 @@
 {
   "name": "nuxt-dynamic-images",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "Dynamiclly create social media preview images with Nuxt",
   "keywords": [
     "nuxt",
@@ -11,17 +11,17 @@
     "images",
     "plugins"
   ],
+  "bugs": {
+    "url": "https://github.com/system76/design/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/btkostner/nuxt-dynamic-images.git"
   },
-  "bugs": {
-    "url": "https://github.com/system76/design/issues"
-  },
   "license": "MIT",
   "contributors": [
     {
-      "name": "Blake Kostner <git@btkostner.io>"
+      "name": "Blake Kostner <npm@btkostner.io>"
     }
   ],
   "sideEffects": false,
@@ -47,20 +47,20 @@
     "puppeteer": "^5.5.0"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@nuxt/types": "latest",
-    "@nuxt/typescript-runtime": "latest",
-    "@nuxtjs/eslint-config-typescript": "latest",
-    "babel-eslint": "latest",
-    "eslint": "latest",
-    "nuxt": "latest",
+    "@babel/core": "^7.12.10",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@nuxt/types": "^2.14.12",
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/eslint-config-typescript": "^5.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.17.0",
+    "nuxt": "^2.14.12",
     "semantic-release": "^17.3.2",
-    "siroc": "latest"
+    "siroc": "^0.6.0"
   },
   "peerDependencies": {
-    "@nuxt/content": "^1.11.1",
-    "consola": "^2.15.0"
+    "@nuxt/content": "^1.0.0",
+    "consola": "^2.0.0"
   },
   "publishConfig": {
     "access": "public"

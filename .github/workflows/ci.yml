@@ -12,8 +12,8 @@ on:
       - main
 
 jobs:
-  Lint_Eslint:
-    name: Lint (eslint)
+  Lint_Git:
+    name: Lint (git)
     runs-on: ubuntu-latest
 
     steps:
@@ -24,12 +24,11 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-      - name: Install (npm)
-        run: npm i
-
-      - name: Lint
-        run: npm run lint
+      - name: Lint (git)
+        run: npx commitlint --from "${{ github.base_ref || 'HEAD^6' }}"
 
   Lint_Eslint:
     name: Lint (eslint)
