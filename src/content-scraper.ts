@@ -11,11 +11,11 @@ function scrapeField (value: string): Boolean {
 }
 
 function generateSavePath (document: IContentDocument, field: string, options, nuxtOptions): string {
-  return join(nuxtOptions.buildDir, 'dist/client', options.publicPath, `${document.path}-${field}.jpg`)
+  return join(nuxtOptions.buildDir, 'dist/client', options.publicPath, `${document.path}/${field}.jpg`)
 }
 
 function generatePublicPath (document: IContentDocument, field: string, options, nuxtOptions): string {
-  return join(nuxtOptions.build.publicPath, options.publicPath, `${document.path}-${field}.jpg`)
+  return join(nuxtOptions.build.publicPath, options.publicPath, `${document.path}/${field}.jpg`)
 }
 
 function generateRequest (document: IContentDocument, field: string, options, nuxtOptions): GenerateRequest {

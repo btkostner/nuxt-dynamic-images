@@ -24,22 +24,41 @@ function dynamicImagesModule (moduleOptions): Module<ModuleOptions> {
     return
   }
 
-  const requests: Array<GenerateRequest> = []
+  let browser = null
+
+  this.nuxt.hook('listen', async () => {
+    browser = await puppeteer.launch(options.puppeteerOptions)
+  })
+
+  this.nuxt.hook('close', async () => {
+    await browser.close()
+  })
+
+  let requests: Array<GenerateRequest> = []
 
   this.nuxt.hook('content:file:beforeInsert', async (doc) => {
     const newRequests = await scrapeContent(doc, options, this.options)
     requests.push(...newRequests)
   })
 
-  this.nuxt.hook('generate:distRemoved', async () => {
-    const browser = await puppeteer.launch(options.puppeteerOptions)
+  const hookName = this.nuxt.options.dev ? 'build:done' : 'listen'
 
-    await Promise.all(requests.map((request) => {
-      return generateContent(request, browser, options, this.nuxt)
-    }))
-
-    await browser.close()
+  this.nuxt.hook(hookName, async () => {
+    await generate(requests, browser, options, this.nuxt)
+    requests = []
   })
+}
+
+async function generate (requests, browser, options, nuxt) {
+  if (requests.length === 1) {
+    logger.info(`Generating ${requests.length} dynamic image`)
+  } else if (requests.length > 1) {
+    logger.info(`Generating ${requests.length} dynamic images`)
+  }
+
+  await Promise.all(requests.map((request) => {
+    return generateContent(request, browser, options, nuxt)
+  }))
 }
 
 ;(dynamicImagesModule as any).meta = require('../package.json')

@@ -3,19 +3,32 @@ import { dirname } from 'path'
 import { GenerateRequest, ModuleOptions } from './types'
 import { logger } from './logger'
 
-export async function generateContent (request: GenerateRequest, browser, options: ModuleOptions, nuxt): void {
-  await fs.mkdir(dirname(request.savePath), { recursive: true })
+async function render (request, nuxt, count = 0) {
+  if (count > 2) {
+    throw new Error('Exceeded retry count')
+  }
 
-  const { html, error } = await nuxt.renderRoute(request.fieldValue, {
+  const { html, error, redirected } = await nuxt.renderRoute(request.fieldValue, {
     contentPath: request.docPath,
     contentField: request.field
   })
 
-  if (error) {
-    throw new Error(`${request.docPath} generated "${error.message}"`)
+  if (redirected != null && redirected !== false) {
+    return render({ ...request, docPath: redirected.path }, nuxt, ++count)
+  } else if (error != null || html == null) {
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    return render(request, nuxt, ++count)
   } else {
-    logger.debug(`Generating ${request.field} for ${request.docPath}`)
+    return html
   }
+}
+
+export async function generateContent (request: GenerateRequest, browser, options: ModuleOptions, nuxt): void {
+  await fs.mkdir(dirname(request.savePath), { recursive: true })
+
+  const html = await render(request, nuxt)
+
+  logger.debug(`Generating ${request.field} for ${request.docPath}`)
 
   const page = await browser.newPage()
   await page.setContent(html)
